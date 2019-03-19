@@ -1,0 +1,36 @@
+{
+  "name": "vue-cli-plugin-library",
+  "version": "0.0.0-semantic-release",
+  "description": "vue component library boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "commit": "git-cz",
+    "lint": "standard",
+    "test": "npm run lint",
+    "precommit": "npm test"
+  },
+  "keywords": [
+    "vue",
+    "components",
+    "sfc",
+    "library"
+  ],
+  "author": "René Herrmann <rene@herrmannplatz.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^1.3.1",
+    "semantic-release": "^15.13.3",
+    "standard": "^12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herrmannplatz/vue-cli-plugin-library.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
