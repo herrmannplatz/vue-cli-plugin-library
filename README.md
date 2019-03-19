@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/vue-cli-plugin-library.svg)](https://badge.fury.io/js/vue-cli-plugin-library) [![Build Status](https://travis-ci.org/herrmannplatz/vue-cli-plugin-library.svg?branch=master)](https://travis-ci.org/herrmannplatz/vue-cli-plugin-library) [![Greenkeeper badge](https://badges.greenkeeper.io/herrmannplatz/vue-cli-plugin-library.svg)](https://greenkeeper.io/)
 
-> 🔺 vue component library boilerplate - derived from [LinusBorg talks](https://github.com/LinusBorg/talks/tree/master/2019-02-15%20Vue.js%20Amsterdam)
+> vue component library boilerplate - inspired by [LinusBorg talk](https://github.com/LinusBorg/talks/tree/master/2019-02-15%20Vue.js%20Amsterdam)
 
 ## Installation
 

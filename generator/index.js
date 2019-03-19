@@ -1,10 +1,12 @@
 const fs = require('fs')
 
+const toCamelCase = str => str.replace(/(^|-)([a-z])/g, match => match.pop().toUpperCase())
+
 module.exports = (api, options, rootOptions) => {
   const pkgPath = api.resolve('./package.json')
   const pkg = require(pkgPath)
   const name = pkg.name || 'my-component-library'
-  const importName = 'MyComponentLibrary'
+  const importName = toCamelCase(name)
 
   // Modify package.json
   api.extendPackage({
@@ -14,7 +16,7 @@ module.exports = (api, options, rootOptions) => {
     'jsDelivr': `dist/${name}.umd.min.js`,
     'files': ['dist', 'src'],
     'peerDependencies': {
-      'vue': '^2.5.22'
+      'vue': '^2.6.6'
     },
     'scripts': {
       'serve': 'vue-cli-service serve ./demo/main',
@@ -26,7 +28,7 @@ module.exports = (api, options, rootOptions) => {
   // Use components in demo app
   api.injectImports(api.entryFile, `import ${importName} from '../src'`)
 
-  // generate new src folder
+  // generate src folder
   api.render('./template')
 
   api.onCreateComplete(() => {
@@ -37,10 +39,10 @@ module.exports = (api, options, rootOptions) => {
     )
     fs.writeFileSync(api.entryFile, contentMain, { encoding: 'utf-8' })
 
-    // rename original src folder to demo
+    // rename original src folder
     fs.renameSync('src', 'demo')
 
-    // rename generated src folder to demo
+    // rename generated src folder
     fs.renameSync('generated', 'src')
   })
 }
